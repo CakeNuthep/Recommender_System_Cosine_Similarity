@@ -1,0 +1,15 @@
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\bin\Debug\RecommenderSystems.exe.config
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\bin\Debug\RecommenderSystems.exe
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\bin\Debug\RecommenderSystems.pdb
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\bin\Debug\MathNet.Numerics.dll
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\bin\Debug\MathNet.Numerics.xml
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.csprojAssemblyReference.cache
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.Properties.Resources.resources
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.csproj.GenerateResource.cache
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.csproj.CoreCompileInputs.cache
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.csproj.CopyComplete
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.exe
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.pdb
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\bin\Debug\MathNet.Numerics.Data.Text.dll
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\bin\Debug\MathNet.Numerics.Data.Text.xml
+D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\obj\Debug\RecommenderSystems.Form1.resources
