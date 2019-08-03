@@ -20,7 +20,7 @@ namespace RecommenderSystems
         public Form1()
         {
             InitializeComponent();
-            textBox_pathFile.Text = @"D:\MachineLernning\recommender systems\RecommenderSystems\RecommenderSystems\Data\movie.data";
+            textBox_pathFile.Text = @"D:\LearningC#\page\Recommender System\App\RecommenderSystems_GitHub\RecommenderSystems\RecommenderSystems\Data\movie.data";
         }
 
         private void button_browse_Click(object sender, EventArgs e)
