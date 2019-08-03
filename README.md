@@ -10,6 +10,6 @@
 	- http://9golfy.com/2016/12/12/คำนวณลักษณะนิสัยใจตรงก-2/
 
 	
-### Libary ที่ใช้ในการเขียนโปรแกรม
+### Library ที่ใช้ในการเขียนโปรแกรม
 - MathNet.Numerics
 - MathNet.Numerics.Data.Text
