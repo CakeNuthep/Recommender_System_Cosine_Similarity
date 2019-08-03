@@ -1,7 +1,7 @@
 "# Recommender_System_Cosine_Similarity" 
 เป็นโปรแกรมภาษา C# สำหรับทำระบบแนะนำ(Recommender System) โดยใช้การคำนวณของ Cosine Similarity มาคำนวณ
 
-ศึกษาเพิ่มเติมได้ที่
+###ศึกษาเพิ่มเติมได้ที่
 - หลัการทำงานของ Recommender System
 	- https://web.facebook.com/notes/e-coding/ระบบแนะนำ-recommender-systems-1/2566649280032924/
 	- https://web.facebook.com/notes/e-coding/ระบบแนะนำ-recommender-systems-2/2577163722314813/
@@ -10,6 +10,6 @@
 	- http://9golfy.com/2016/12/12/คำนวณลักษณะนิสัยใจตรงก-2/
 
 	
-Libary ที่ใช้ในการเขียนโปรแกรม
+###Libary ที่ใช้ในการเขียนโปรแกรม
 - MathNet.Numerics
 - MathNet.Numerics.Data.Text
