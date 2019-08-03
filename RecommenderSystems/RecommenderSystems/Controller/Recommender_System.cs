@@ -7,10 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecommenderSystems
+namespace RecommenderSystems.Controller
 {
     public class Recommender_System
     {
+
+        /// <summary>
+        /// this method for calculate cosine simularity.
+        /// </summary>
+        /// <param name="data">Metrix data</param>
+        /// <returns></returns>
         public static Matrix<double> cosin(Matrix<double> data)
         {
             Matrix<double> similar_matrix = DenseMatrix.Create(data.RowCount, data.RowCount, 0);
@@ -45,66 +51,7 @@ namespace RecommenderSystems
             return similar_matrix;
         }
 
-
-        public static double rmse(Matrix<double> prediction, Matrix<double> ground_truth)
-        {
-            List<int[]> list_index = findNonZero(ground_truth);
-            List<double> list_predic = getValueFromListIndex(prediction, list_index);
-            List<double> list_ground_truth = getValueFromListIndex(ground_truth, list_index);
-            return Math.Sqrt(mean_squared_error(list_predic, list_ground_truth));
-
-        }
-
-        public static double mean_squared_error(List<double> list1, List<double> list2)
-        {
-            double sum = 0;
-            int count = list1.Count;
-            if (count > list2.Count)
-            {
-                count = list2.Count;
-            }
-
-            for (int index = 0; index < count; index++)
-            {
-                double delta = list1[index] - list2[index];
-                if (double.IsNaN(delta))
-                {
-                    count--;
-                }
-                else
-                {
-                    sum += (delta * delta);
-                }
-
-            }
-            return sum / count;
-        }
-
-        public static List<double> getValueFromListIndex(Matrix<double> matrix, List<int[]> list_index)
-        {
-            List<double> list_value = new List<double>();
-            foreach (int[] index in list_index)
-            {
-                list_value.Add(matrix[index[0], index[1]]);
-            }
-            return list_value;
-        }
-
-        public static List<int[]> findNonZero(Matrix<double> matrix)
-        {
-            List<int[]> list_index = new List<int[]>();
-            for (int row = 0; row < matrix.RowCount; row++)
-            {
-                for (int col = 0; col < matrix.ColumnCount; col++)
-                {
-                    if (matrix[row, col] != 0)
-                    {
-                        list_index.Add(new int[] { row, col });
-                    }
-                }
-            }
-            return list_index;
-        }
+       
 
         public static Matrix<double> predict(Matrix<double> ratings, Matrix<double> similarity, string type = "user")
         {
@@ -114,16 +61,16 @@ namespace RecommenderSystems
             {
                 Matrix<double> mean_user_rating = mean(ratings);
                 Matrix<double> ratings_diff;
-                if (sub(ratings, mean_user_rating, out ratings_diff))//ratings.Subtract(mean_user_rating);
+                if (subMatrix(ratings, mean_user_rating, out ratings_diff))//ratings.Subtract(mean_user_rating);
                 {
                     Matrix<double> sim_mul_ratingDiff = similarity.Multiply(ratings_diff);
                     Vector<double> vector_sum = RowAbsoluteSums(similarity);
                     Matrix<double> sum = DenseMatrix.Create(1, vector_sum.Count, 0);
                     sum.SetRow(0, vector_sum);
                     Matrix<double> devide_matrix;
-                    if (devide(sim_mul_ratingDiff, sum.Transpose(), out devide_matrix))
+                    if (devideMatrix(sim_mul_ratingDiff, sum.Transpose(), out devide_matrix))
                     {
-                        add(devide_matrix, mean_user_rating, out pred);//mean_user_rating.Add(devide_matrix);
+                        addMatrix(devide_matrix, mean_user_rating, out pred);//mean_user_rating.Add(devide_matrix);
                     }
                 }
             }
@@ -134,7 +81,7 @@ namespace RecommenderSystems
                 Matrix<double> sum = DenseMatrix.Create(1, vector_sum.Count, 0);
                 sum.SetRow(0, vector_sum);
                 Matrix<double> devide_matrix;
-                if (devide(rat_mul_sim, sum, out devide_matrix))
+                if (devideMatrix(rat_mul_sim, sum, out devide_matrix))
                 {
                     pred = devide_matrix;
                 }
@@ -157,7 +104,7 @@ namespace RecommenderSystems
             return vector;
         }
 
-        public static bool add(Matrix<double> matrix, Matrix<double> addmatrix, out Matrix<double> result)
+        public static bool addMatrix(Matrix<double> matrix, Matrix<double> addmatrix, out Matrix<double> result)
         {
             result = null;
             if (matrix.RowCount == addmatrix.RowCount && addmatrix.ColumnCount == 1)
@@ -183,7 +130,7 @@ namespace RecommenderSystems
             return false;
         }
 
-        public static bool sub(Matrix<double> matrix, Matrix<double> subMatrix, out Matrix<double> result)
+        public static bool subMatrix(Matrix<double> matrix, Matrix<double> subMatrix, out Matrix<double> result)
         {
             result = null;
             if (matrix.RowCount == subMatrix.RowCount && subMatrix.ColumnCount == 1)
@@ -219,7 +166,7 @@ namespace RecommenderSystems
             return mean_matrix;
         }
 
-        public static bool devide(Matrix<double> matrix, Matrix<double> matrixDevide, out Matrix<double> result)
+        public static bool devideMatrix(Matrix<double> matrix, Matrix<double> matrixDevide, out Matrix<double> result)
         {
             result = null;
             if (matrix.RowCount == matrixDevide.RowCount && matrixDevide.ColumnCount == 1)
