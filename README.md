@@ -1,4 +1,4 @@
-"# Recommender_System_Cosine_Similarity" 
+# Recommender_System_Cosine_Similarity
 เป็นโปรแกรมภาษา C# สำหรับทำระบบแนะนำ(Recommender System) โดยใช้การคำนวณของ Cosine Similarity มาคำนวณ
 
 ### ศึกษาเพิ่มเติมได้ที่
